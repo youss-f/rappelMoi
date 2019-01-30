@@ -3,6 +3,7 @@ import { Task } from '../../models/task';
 import { TaskService } from '../../services/task.service';
 import { NavController } from '@ionic/angular';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-new-task',
@@ -13,14 +14,15 @@ export class NewTaskPage implements OnInit {
 
   constructor(private taskService: TaskService,
               public navCtrl: NavController,
-              public localNotifications: LocalNotifications) {
+              public localNotifications: LocalNotifications,
+              public camera: Camera) {
                 this.taskService.getTasks().then(
                   tasks => {
                     if(null !== tasks){
                       this.tasks=tasks;
                     }
                   }
-                )
+                );
                }
 
   task :Task = new Task();
@@ -81,4 +83,20 @@ export class NewTaskPage implements OnInit {
     this.saveTask();
   }
 
+  openCamera(){
+    const options: CameraOptions = {
+      quality: 20,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+    this.task.img = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+     // Handle error
+    });
+  }
 }

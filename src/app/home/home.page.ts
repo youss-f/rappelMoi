@@ -52,7 +52,7 @@ export class HomePage implements OnInit{
 
 
   gotoNewTask(){
-    this.router.navigate(["/task"]);
+    this.router.navigate(["/new-task"]);
   }
 
 

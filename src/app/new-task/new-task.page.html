@@ -9,7 +9,6 @@
   <div class="" style="text-align:right">
     <button ion-button block (click)="saveTask()">Save</button>
   </div>
-
   <ion-list>
     <ion-item>
       <ion-label> {{task.title}} </ion-label>
@@ -56,6 +55,13 @@
       <ion-datetime  #calendar2 placeholder="JJ/MM/AAAA HH:mm" displayFormat="DD/MM/YYYY HH:mm" min="{{date.toISOString()}}" [(ngModel)]="task.duedate"></ion-datetime>
     </ion-item>
 
+    <ion-item>
+      <div class="" style="text-align:right">
+        <button ion-button block (click)="openCamera()">Camera</button>
+      </div>
+    </ion-item>
+
 
   </ion-list>
+
 </ion-content>

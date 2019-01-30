@@ -15,7 +15,7 @@ export class TaskPage implements OnInit {
 
   id : string;
   //création d'une tache
-  task :Task = new Task();
+  task : any;
   // liste des taches
   tasks: Task[] = [];
   tasks2: Task[] = [];

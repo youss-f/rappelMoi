@@ -8,4 +8,5 @@ export class Task{
   notification: boolean = true;
   //lieu:string;
   liste: string[] = [];
+  img:any;
 }

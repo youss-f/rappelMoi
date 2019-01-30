@@ -16,6 +16,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { NewTaskPage } from './new-task/new-task.page';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 
 
@@ -35,6 +36,7 @@ import { HttpModule } from '@angular/http';
   ],
   providers: [
     StatusBar,
+    Camera,
     TaskService,
     SplashScreen,
     LocalNotifications,
