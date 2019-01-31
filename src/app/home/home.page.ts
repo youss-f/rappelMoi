@@ -69,4 +69,8 @@ export class HomePage implements OnInit{
      this.router.navigate(["/task", task]);
    }
 
+   getCourse(task: Task){
+     this.router.navigate(["/course", task]);
+   }
+
 }

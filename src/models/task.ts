@@ -1,3 +1,6 @@
+import {Elements} from './elements';
+
+
 export class Task{
   id: number;
   title: string;
@@ -7,6 +10,6 @@ export class Task{
   description: string;
   notification: boolean = true;
   //lieu:string;
-  liste: string[] = [];
+  //liste: Elements[] = [];
   img:any;
 }

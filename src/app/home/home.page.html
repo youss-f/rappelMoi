@@ -12,9 +12,7 @@
 </ion-header>
 
 <ion-content>
-    <div class="A">
-      <div class="A1">
-        <div class="todo1">
+
           <ion-list>
             <ion-item-sliding  *ngFor="let task of tasks">
               <ion-item (click)="gotoTask(task)" >
@@ -23,12 +21,13 @@
               <ion-item-options side="end">
                 <button ion-button color="danger" (click)="removeTask(task.id)">Did</button>
               </ion-item-options>
+              <ion-item-options side="start" *ngIf="task.type == 'course'">
+                <button ion-button color="secondary" >liste des courses</button>
+              </ion-item-options>
             </ion-item-sliding>
 
           </ion-list>
-        </div>
-      </div>
-    </div>
+
       <ion-fab horizontal="center" vertical="bottom" slot="fixed" class="fab-horizontal-end fab-vertical-bottom hydrated">
         <ion-fab-button (click)="gotoNewTask()" color="danger" class="ion-color ion-color-danger ion-activatable hydrated">
           <ion-icon name="add" role="img" class="hydrated" aria-label="add"></ion-icon>

@@ -18,12 +18,15 @@
       <ion-input type="text" placeholder="titre ..." [(ngModel)]="task.title"> </ion-input>
     </ion-item>
 
-    <ion-item>
-      {{task | json}}
-    </ion-item>
+
 
     <ion-item>
       <ion-input type="text" placeholder="description ..." [(ngModel)]="task.description"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>notification</ion-label>
+      <ion-checkbox checked='trur' ([ngmodel])="task.notification" ></ion-checkbox>
     </ion-item>
 
     <ion-list>

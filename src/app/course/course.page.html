@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-buttons slot="start"> <ion-back-button defaultHref="home"></ion-back-button> </ion-buttons>
+  <ion-toolbar>
+    <ion-title>Liste</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+      <ion-item *ngFor="let c of task.liste">
+        <ion-label>  {{c.nom}}</ion-label>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-input type="text" placeholder="ajouter à ma liste de courses" [(ngModel)]="course.nom" (ionBlur)="saveCourse()"></ion-input>
+      </ion-item>
+
+
+  </ion-list>
+
+
+</ion-content>

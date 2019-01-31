@@ -68,10 +68,10 @@ export class NewTaskPage implements OnInit {
     // Schedule delayed notification
     var dateN = new Date(this.task.duedate);
     // Schedule delayed notification
-    if(this.task.type!=="anniversaire" && this.task.type!=="none")
+    if(this.task.notification===true && this.task.type!=="anniversaire" && this.task.type!=="none")
     this.localNotifications.schedule({
        text: this.task.title,
-       trigger: {at: new Date(this.task.duedate)},
+       trigger: {at: new Date(new Date().getTime() + 3600)},
        led: 'FF0000',
        sound: null
     });
